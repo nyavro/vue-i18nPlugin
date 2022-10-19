@@ -1,0 +1,1 @@
+$t('ref.val<caret>ue3')

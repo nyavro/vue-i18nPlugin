@@ -1,0 +1,1 @@
+"I want to <caret>move it to translation"

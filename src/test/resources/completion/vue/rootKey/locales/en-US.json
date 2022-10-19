@@ -1,0 +1,7 @@
+{
+  "tst1": {
+    "base": {
+      "completion/vue/single": "only one value"
+    }
+  }
+}

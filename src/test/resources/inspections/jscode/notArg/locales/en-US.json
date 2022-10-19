@@ -1,0 +1,12 @@
+{
+  "tst2": {
+    "plurals": {
+      "value-1": "value1",
+      "value-2": "value2",
+      "value-5": "value5"
+    },
+    "second": {
+      "value": "tt"
+    }
+  }
+}

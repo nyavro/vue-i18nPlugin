@@ -1,0 +1,49 @@
+<idea-plugin>
+    <id>com.eny.i18nVue</id>
+    <name>vue-i18n support</name>
+    <vendor email="e.nyavro@gmail.com" url="https://github.com/nyavro/i18nPlugin">i18nPlugin</vendor>
+    <depends>com.intellij.modules.platform</depends>
+    <description><![CDATA[
+    <h4>vue-i18n TypeScript/JavaScript</h4>
+    i18n plugin provides:
+    <ul>
+        <li>annotation of invalid i18n keys</li>
+        <li>navigation to i18n property value definition</li>
+        <li>navigation from i18n json/yaml reference to code usage</li>
+        <li>code completion</li>
+        <li>missing namespace/key quick fixes</li>
+        <li>text to translation extraction</li>
+    </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <div>
+            <h3>0.0.1</h3>
+            <ul>
+                <li>Vue-i18n support plugin indtroduced</li>
+            </ul>
+        </div>
+    ]]>
+    </change-notes>
+
+    <depends>JavaScript</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+    <depends optional="true" config-file="vueConfig.xml">org.jetbrains.plugins.vue</depends>
+    <resource-bundle>messages.I18nBundle</resource-bundle>
+    <extensions defaultExtensionNs="com.intellij">
+        <annotator language="JavaScript" implementationClass="com.eny.i18n.vue.plugin.ide.annotator.JsCompositeKeyAnnotator"/>
+        <psi.referenceContributor language="JavaScript" implementation="com.eny.i18n.vue.plugin.ide.references.code.JsReferenceContributor"/>
+        <psi.referenceContributor language="JSON" implementation="com.eny.i18n.vue.plugin.ide.references.translation.JsonReferenceContributor"/>
+        <psi.referenceContributor language="yaml" implementation="com.eny.i18n.vue.plugin.ide.references.translation.YamlReferenceContributor"/>
+        <completion.contributor language="JavaScript" implementationClass="com.eny.i18n.vue.plugin.ide.completion.JsCompletionContributor"/>
+        <projectService serviceImplementation="com.eny.i18n.vue.plugin.ide.settings.Settings"/>
+        <projectConfigurable groupId="tools" displayName="I18n Plugin Configuration" instance="com.eny.i18n.vue.plugin.ide.settings.Configurable"/>
+        <intentionAction>
+            <className>com.eny.i18n.vue.plugin.ide.actions.ExtractI18nIntentionAction</className>
+        </intentionAction>
+        <lang.foldingBuilder language="TypeScript" implementationClass="com.eny.i18n.vue.plugin.ide.folding.JsFoldingBuilder"/>
+        <lang.foldingBuilder language="JavaScript" implementationClass="com.eny.i18n.vue.plugin.ide.folding.JsFoldingBuilder"/>
+        <lang.documentationProvider language="JavaScript" implementationClass="com.eny.i18n.vue.plugin.ide.hint.HintProvider"/>
+        <languageInjector implementation="com.eny.i18n.vue.plugin.ide.injections.VueSFCTranslationInjector"/>
+    </extensions>
+</idea-plugin>
