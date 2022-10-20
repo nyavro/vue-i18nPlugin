@@ -68,7 +68,7 @@ class JsonElementTree(val element: PsiElement): PsiElementTree() {
     override fun value(): PsiElement = element
     override fun isTree(): Boolean = element is JsonObject
     override fun findChild(name: String): Tree<PsiElement>? =
-        (element as JsonObject).findProperty(name)?.value?.let{ JsonElementTree(it) }
+        (element as? JsonObject)?.propertyList?.find{it.name==name}?.value?.let{ JsonElementTree(it) }
     override fun findChildren(prefix: String): List<Tree<PsiElement>> =
         element
             .node

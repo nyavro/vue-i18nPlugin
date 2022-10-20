@@ -126,7 +126,7 @@ class Settings : PersistentStateComponent<Settings> {
         /**
          * Loads project's Settings instance
          */
-        fun getInstance(project: Project): Settings = ServiceManager.getService(project, Settings::class.java)
+        fun getInstance(project: Project): Settings = project.getService(Settings::class.java)
     }
 
     fun mainFactory(): com.eny.i18n.vue.plugin.factory.MainFactory =

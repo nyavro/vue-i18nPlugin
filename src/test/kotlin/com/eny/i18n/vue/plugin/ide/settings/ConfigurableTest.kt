@@ -13,7 +13,7 @@ class ConfigurableTest {
     @Test
     fun testConfigurable() {
         val project = mockk<Project>()
-        every { project.getService(Settings::class.java, true) } returns Settings()
+        every { project.getService(Settings::class.java) } returns Settings()
         val configurable = Configurable(project)
         assertEquals(PluginBundle.getMessage("app.name"), configurable.displayName)
         assertEquals("preference.i18nPlugin", configurable.helpTopic)
