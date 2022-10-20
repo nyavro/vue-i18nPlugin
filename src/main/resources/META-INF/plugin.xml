@@ -18,7 +18,7 @@
 
     <change-notes><![CDATA[
         <div>
-            <h3>1.0.0</h3>
+            <h3>1.0.1</h3>
             <ul>
                 <li>Vue-i18n support plugin indtroduced</li>
             </ul>
