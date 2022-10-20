@@ -16,8 +16,8 @@ class ConfigurableTest {
         every { project.getService(Settings::class.java) } returns Settings()
         val configurable = Configurable(project)
         assertEquals(PluginBundle.getMessage("app.name"), configurable.displayName)
-        assertEquals("preference.i18nPlugin", configurable.helpTopic)
-        assertEquals("preference.i18nPlugin", configurable.id)
+        assertEquals("preference.vue-i18nPlugin", configurable.helpTopic)
+        assertEquals("preference.vue-i18nPlugin", configurable.id)
         assertNotNull(configurable.createComponent())
     }
 }

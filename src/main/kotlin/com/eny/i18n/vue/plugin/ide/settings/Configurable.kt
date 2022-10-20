@@ -23,9 +23,9 @@ class Configurable(val project: Project) : BaseConfigurable(), SearchableConfigu
     @Nls
     override fun getDisplayName(): String = PluginBundle.getMessage("app.name")
 
-    override fun getHelpTopic(): String? = "preference.i18nPlugin"
+    override fun getHelpTopic(): String? = "preference.vue-i18nPlugin"
 
-    override fun getId(): String = "preference.i18nPlugin"
+    override fun getId(): String = "preference.vue-i18nPlugin"
 
     override fun apply() {
     }

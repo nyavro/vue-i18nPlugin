@@ -16,7 +16,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil
 /**
  * Plugin settings
  */
-@State(name = "i18nSettings", storages = [Storage("i18nSettings.xml")])
+@State(name = "vue-i18nSettings", storages = [Storage("vue-i18nSettings.xml")])
 class Settings : PersistentStateComponent<Settings> {
 
     private val default: Config = Config()
