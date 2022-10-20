@@ -10,7 +10,11 @@
 
 [![Downloads Badge](https://img.shields.io/jetbrains/plugin/d/12981-i18n-support.svg)](https://plugins.jetbrains.com/plugin/12981-i18n-support)
 
-Intellij idea i18next support plugin
+Intellij idea vue-i18next support plugin
+
+<!-- Plugin description -->
+
+<!-- Plugin description end -->
 
 ## Features
    ### Annotations
