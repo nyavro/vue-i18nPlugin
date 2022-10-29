@@ -54,11 +54,6 @@ class SettingsPanelTest {
     }
 
     @Test
-    fun testNsSeparator() {
-        checkStringProperty("#", PluginBundle.getMessage("settings.namespace.separator"), Settings::nsSeparator)
-    }
-
-    @Test
     fun testInvalidSeparator() = runWithSettings(Settings()) {
         settings ->
             val message = PluginBundle.getMessage("settings.key.separator")
