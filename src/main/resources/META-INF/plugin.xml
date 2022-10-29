@@ -11,7 +11,7 @@
         <li>navigation to i18n property value definition</li>
         <li>navigation from i18n json/yaml reference to code usage</li>
         <li>code completion</li>
-        <li>missing namespace/key quick fixes</li>
+        <li>missing key quick fixes</li>
         <li>text to translation extraction</li>
     </ul>
     ]]></description>
