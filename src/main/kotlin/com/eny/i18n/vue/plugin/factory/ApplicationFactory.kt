@@ -29,7 +29,7 @@ interface LanguageFactory {
  * Represents localization type.
  * subSystem defines usage cases.
  */
-data class LocalizationType(val fileType: FileType, val subSystem: String)
+data class LocalizationType(val fileType: FileType)
 
 /**
  * Localization components factory
@@ -67,6 +67,6 @@ class MainFactory(private val languageFactories: List<com.eny.i18n.vue.plugin.fa
     /**
      * Pick content generator by file type
      */
-    fun contentGenerator(type: com.eny.i18n.vue.plugin.factory.LocalizationType): com.eny.i18n.vue.plugin.factory.ContentGenerator? =
+    fun contentGenerator(type: FileType): com.eny.i18n.vue.plugin.factory.ContentGenerator? =
         localizationFactories.find {it.contentGenerator().getType() == type}?.contentGenerator()
 }

@@ -25,7 +25,7 @@ internal fun root(tree: TestTree) = TestTree("", listOf(tree))
  */
 internal class CompositeKeyResolverTest {
 
-    private val type = com.eny.i18n.vue.plugin.factory.LocalizationType(JsonFileType.INSTANCE, "test")
+    private val type = JsonFileType.INSTANCE
 
     @Test
     fun resolveElementByKey() {
@@ -183,7 +183,7 @@ internal class CompositeKeyResolverTest {
 
 internal class CompositeKeyResolverUnresolvedTest {
 
-    private val type = com.eny.i18n.vue.plugin.factory.LocalizationType(JsonFileType.INSTANCE, "test")
+    private val type = JsonFileType.INSTANCE
 
     @Test
     fun unresolvedPathIsNull() {

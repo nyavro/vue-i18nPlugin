@@ -12,6 +12,7 @@ import com.eny.i18n.vue.plugin.utils.CollectingSequence
 import com.eny.i18n.vue.plugin.utils.PluginBundle
 import com.eny.i18n.vue.plugin.utils.unQuote
 import com.intellij.lang.Language
+import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.util.TextRange
 import com.intellij.patterns.ElementPattern
 import com.intellij.patterns.PlatformPatterns
@@ -65,8 +66,7 @@ private class YamlContentGenerator: ContentGenerator {
             "$caret$tab${key.text}: $acc"
         })
 
-    override fun getType(): com.eny.i18n.vue.plugin.factory.LocalizationType =
-        com.eny.i18n.vue.plugin.factory.LocalizationType(YAMLFileType.YML, "general")
+    override fun getType(): FileType = YAMLFileType.YML
     override fun getLanguage(): Language = YAMLLanguage.INSTANCE
     override fun getDescription(): String = PluginBundle.getMessage("quickfix.create.yaml.translation.files")
     override fun isSuitable(element: PsiElement): Boolean = (element is YAMLMapping) || (element is YAMLDocument)

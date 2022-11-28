@@ -1,6 +1,5 @@
 package tree
 
-import com.eny.i18n.vue.plugin.factory.LocalizationType
 import com.eny.i18n.vue.plugin.key.lexer.Literal
 import com.eny.i18n.vue.plugin.tree.CompositeKeyResolver
 import com.intellij.json.JsonFileType
@@ -26,7 +25,7 @@ internal class CompositeKeyVariantsTest {
             fixed.map{Literal(it)},
             testTree(),
             request,
-            com.eny.i18n.vue.plugin.factory.LocalizationType(JsonFileType.INSTANCE, "test")
+            JsonFileType.INSTANCE
         )
         assertEquals(expected, variants.map {it.value()}.toSet())
     }

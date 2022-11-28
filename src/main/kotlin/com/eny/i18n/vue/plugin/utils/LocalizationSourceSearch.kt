@@ -26,7 +26,7 @@ import org.jetbrains.yaml.YAMLFileType
  * May be root of json, yaml file, js object
  */
 data class LocalizationSource(
-    val element: PsiElement, val name: String, val parent: String, val displayPath: String, val type: com.eny.i18n.vue.plugin.factory.LocalizationType,
+    val element: PsiElement, val name: String, val parent: String, val displayPath: String, val type: FileType,
     val host: PsiElement? = null
 )
 /**
@@ -88,7 +88,7 @@ class LocalizationSourceSearch(private val project: Project) {
                                 it.name,
                                 fileName,
                                 "SFC: ${fileName}/${it.name} ",
-                                com.eny.i18n.vue.plugin.factory.LocalizationType(JsonFileType.INSTANCE, "vue-sfc"),
+                                JsonFileType.INSTANCE,
                                 sfcSourceText
                             )
                         }
@@ -118,7 +118,7 @@ class LocalizationSourceSearch(private val project: Project) {
                     .virtualFile
                     .path
             ).trim('/') + '/' + file.name,
-            com.eny.i18n.vue.plugin.factory.LocalizationType(file.fileType, "general")
+            file.fileType
         )
     }
 

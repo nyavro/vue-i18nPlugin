@@ -3,6 +3,7 @@ package com.eny.i18n.vue.plugin.factory
 import com.eny.i18n.vue.plugin.key.FullKey
 import com.eny.i18n.vue.plugin.key.lexer.Literal
 import com.intellij.lang.Language
+import com.intellij.openapi.fileTypes.FileType
 import com.intellij.psi.PsiElement
 
 /**
@@ -24,7 +25,7 @@ interface ContentGenerator {
     /**
      * Returns localization type
      */
-    fun getType(): com.eny.i18n.vue.plugin.factory.LocalizationType
+    fun getType(): FileType
 
     /**
      * Returns language

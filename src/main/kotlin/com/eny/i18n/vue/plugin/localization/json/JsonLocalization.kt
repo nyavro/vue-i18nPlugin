@@ -15,6 +15,7 @@ import com.intellij.json.JsonFileType
 import com.intellij.json.JsonLanguage
 import com.intellij.json.psi.*
 import com.intellij.lang.Language
+import com.intellij.openapi.fileTypes.FileType
 import com.intellij.openapi.util.TextRange
 import com.intellij.patterns.ElementPattern
 import com.intellij.patterns.PlatformPatterns
@@ -67,8 +68,7 @@ private class JsonContentGenerator: ContentGenerator {
         })
     }
 
-    override fun getType(): com.eny.i18n.vue.plugin.factory.LocalizationType =
-        com.eny.i18n.vue.plugin.factory.LocalizationType(JsonFileType.INSTANCE, "general")
+    override fun getType(): FileType = JsonFileType.INSTANCE
     override fun getLanguage(): Language = JsonLanguage.INSTANCE
     override fun getDescription(): String = PluginBundle.getMessage("quickfix.create.json.translation.files")
     override fun isSuitable(element: PsiElement): Boolean = element is JsonObject

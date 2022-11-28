@@ -13,8 +13,7 @@ import org.junit.jupiter.api.Test
  */
 internal class CompositeKeyResolvePluralsTest {
 
-    private val localizationType: com.eny.i18n.vue.plugin.factory.LocalizationType =
-        com.eny.i18n.vue.plugin.factory.LocalizationType(JsonFileType.INSTANCE, "test")
+    private val localizationType = JsonFileType.INSTANCE
 
     @Test
     fun resolvePluralElementByKey() {
