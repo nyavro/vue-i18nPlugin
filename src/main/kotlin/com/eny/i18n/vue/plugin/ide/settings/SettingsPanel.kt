@@ -123,7 +123,6 @@ class SettingsPanel(val settings: Settings, val project: Project) {
         root.layout = BorderLayout()
         panel.layout = BoxLayout(panel, BoxLayout.Y_AXIS)
         panel.add(checkbox(PluginBundle.getMessage("settings.search.in.project.files.only"), settings::searchInProjectOnly))
-        panel.add(separator(PluginBundle.getMessage("settings.namespace.separator"), settings::nsSeparator))
         panel.add(separator(PluginBundle.getMessage("settings.key.separator"), settings::keySeparator))
         panel.add(separator(PluginBundle.getMessage("settings.plural.separator"), settings::pluralSeparator))
         panel.add(textArea(PluginBundle.getMessage("settings.default.namespace"), settings::defaultNs))

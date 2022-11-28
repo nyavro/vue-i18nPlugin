@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.eny.i18nVue</id>
     <name>Vue-I18n Support</name>
-    <vendor email="e.nyavro@gmail.com" url="https://github.com/nyavro/i18nPlugin">i18nPlugin</vendor>
+    <vendor email="e.nyavro@gmail.com" url="https://github.com/nyavro/vue-i18nPlugin">i18nPlugin</vendor>
     <depends>com.intellij.modules.platform</depends>
     <description><![CDATA[
     <h4>vue-i18n TypeScript/JavaScript</h4>
@@ -11,7 +11,7 @@
         <li>navigation to i18n property value definition</li>
         <li>navigation from i18n json/yaml reference to code usage</li>
         <li>code completion</li>
-        <li>missing namespace/key quick fixes</li>
+        <li>missing key quick fixes</li>
         <li>text to translation extraction</li>
     </ul>
     ]]></description>
@@ -27,17 +27,16 @@
     </change-notes>
 
     <depends>JavaScript</depends>
-    <depends>org.jetbrains.plugins.yaml</depends>
+    <depends optional="true" config-file="yamlConfig.xml">org.jetbrains.plugins.yaml</depends>
     <depends optional="true" config-file="vueConfig.xml">org.jetbrains.plugins.vue</depends>
-    <resource-bundle>messages.I18nBundle</resource-bundle>
+    <resource-bundle>messages.VueI18nBundle</resource-bundle>
     <extensions defaultExtensionNs="com.intellij">
         <annotator language="JavaScript" implementationClass="com.eny.i18n.vue.plugin.ide.annotator.JsCompositeKeyAnnotator"/>
         <psi.referenceContributor language="JavaScript" implementation="com.eny.i18n.vue.plugin.ide.references.code.JsReferenceContributor"/>
         <psi.referenceContributor language="JSON" implementation="com.eny.i18n.vue.plugin.ide.references.translation.JsonReferenceContributor"/>
-        <psi.referenceContributor language="yaml" implementation="com.eny.i18n.vue.plugin.ide.references.translation.YamlReferenceContributor"/>
         <completion.contributor language="JavaScript" implementationClass="com.eny.i18n.vue.plugin.ide.completion.JsCompletionContributor"/>
         <projectService serviceImplementation="com.eny.i18n.vue.plugin.ide.settings.Settings"/>
-        <projectConfigurable groupId="tools" displayName="I18n Plugin Configuration" instance="com.eny.i18n.vue.plugin.ide.settings.Configurable"/>
+        <projectConfigurable groupId="tools" bundle="messages.VueI18nBundle" key="settings.configuration.title" instance="com.eny.i18n.vue.plugin.ide.settings.Configurable"/>
         <intentionAction>
             <className>com.eny.i18n.vue.plugin.ide.actions.ExtractI18nIntentionAction</className>
         </intentionAction>

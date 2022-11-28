@@ -4,4 +4,4 @@ import com.intellij.AbstractBundle
 /**
  * Object for extracting values from properties bundle
  */
-object PluginBundle : AbstractBundle("messages.I18nBundle")
+object PluginBundle : AbstractBundle("messages.VueI18nBundle")
